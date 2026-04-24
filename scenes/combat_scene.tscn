@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cryd0rppdi3by"]
 
 [ext_resource type="PackedScene" uid="uid://c3csvpnsr1a5a" path="res://scenes/player_spaceship.tscn" id="1_ik0t7"]
+[ext_resource type="Script" uid="uid://c00k3fkpwwscg" path="res://scripts/combat_scene.gd" id="1_ofoda"]
 
 [node name="CombatScene" type="Node2D" unique_id=826582727]
+script = ExtResource("1_ofoda")
 
 [node name="PlayerSpaceship" parent="." unique_id=853195903 instance=ExtResource("1_ik0t7")]
 position = Vector2(583, 575)
+
+[connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
