@@ -2,11 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://c3csvpnsr1a5a" path="res://scenes/player_spaceship.tscn" id="1_ik0t7"]
 [ext_resource type="Script" uid="uid://c00k3fkpwwscg" path="res://scripts/combat_scene.gd" id="1_ofoda"]
+[ext_resource type="PackedScene" uid="uid://blwhw6xjetfe1" path="res://scenes/alien_spaceship.tscn" id="3_m17q1"]
 
 [node name="CombatScene" type="Node2D" unique_id=826582727]
 script = ExtResource("1_ofoda")
 
 [node name="PlayerSpaceship" parent="." unique_id=853195903 instance=ExtResource("1_ik0t7")]
 position = Vector2(583, 575)
+
+[node name="AlienSpaceship" parent="." unique_id=1091925366 instance=ExtResource("3_m17q1")]
+position = Vector2(570, 242)
+
+[node name="AlienSpaceship2" parent="." unique_id=401079254 instance=ExtResource("3_m17q1")]
+position = Vector2(539, 270)
+
+[node name="AlienSpaceship3" parent="." unique_id=1682287502 instance=ExtResource("3_m17q1")]
+position = Vector2(600, 211)
+
+[node name="AlienSpaceship4" parent="." unique_id=2052593277 instance=ExtResource("3_m17q1")]
+position = Vector2(540, 220)
+
+[node name="AlienSpaceship5" parent="." unique_id=786004956 instance=ExtResource("3_m17q1")]
+position = Vector2(610, 240)
 
 [connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
