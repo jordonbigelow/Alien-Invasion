@@ -21,21 +21,5 @@ position = Vector2(583, 575)
 [node name="AlienSpaceship" parent="." unique_id=1091925366 groups=["aliens"] instance=ExtResource("3_m17q1")]
 position = Vector2(570, 242)
 
-[node name="AlienSpaceship2" parent="." unique_id=401079254 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(539, 270)
-
-[node name="AlienSpaceship3" parent="." unique_id=1682287502 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(600, 211)
-
-[node name="AlienSpaceship4" parent="." unique_id=2052593277 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(540, 220)
-
-[node name="AlienSpaceship5" parent="." unique_id=786004956 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(610, 240)
-
 [connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
 [connection signal="died" from="AlienSpaceship" to="." method="_on_alien_spaceship_died"]
-[connection signal="died" from="AlienSpaceship2" to="." method="_on_alien_spaceship_died"]
-[connection signal="died" from="AlienSpaceship3" to="." method="_on_alien_spaceship_died"]
-[connection signal="died" from="AlienSpaceship4" to="." method="_on_alien_spaceship_died"]
-[connection signal="died" from="AlienSpaceship5" to="." method="_on_alien_spaceship_died"]
