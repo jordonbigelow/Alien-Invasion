@@ -7,6 +7,14 @@
 [node name="CombatScene" type="Node2D" unique_id=826582727]
 script = ExtResource("1_ofoda")
 
+[node name="Background" type="CanvasLayer" parent="." unique_id=1094266236]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=1382988647]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 1)
+
 [node name="PlayerSpaceship" parent="." unique_id=853195903 instance=ExtResource("1_ik0t7")]
 position = Vector2(583, 575)
 
