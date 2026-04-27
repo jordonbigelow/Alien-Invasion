@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://c00k3fkpwwscg" path="res://scripts/combat_scene.gd" id="1_ofoda"]
 [ext_resource type="PackedScene" uid="uid://blwhw6xjetfe1" path="res://scenes/alien_spaceship.tscn" id="3_m17q1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m17q1"]
-size = Vector2(23, 647)
-
 [node name="CombatScene" type="Node2D" unique_id=826582727]
 script = ExtResource("1_ofoda")
 
@@ -35,14 +32,6 @@ position = Vector2(540, 220)
 
 [node name="AlienSpaceship5" parent="." unique_id=786004956 groups=["aliens"] instance=ExtResource("3_m17q1")]
 position = Vector2(610, 240)
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=922844744]
-offset_right = 22.0
-offset_bottom = 650.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect" unique_id=514814281]
-position = Vector2(11.5, 323.5)
-shape = SubResource("RectangleShape2D_m17q1")
 
 [connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
 [connection signal="died" from="AlienSpaceship" to="." method="_on_alien_spaceship_died"]
