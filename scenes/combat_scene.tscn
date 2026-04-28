@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3csvpnsr1a5a" path="res://scenes/player_spaceship.tscn" id="1_ik0t7"]
 [ext_resource type="Script" uid="uid://c00k3fkpwwscg" path="res://scripts/combat_scene.gd" id="1_ofoda"]
-[ext_resource type="PackedScene" uid="uid://blwhw6xjetfe1" path="res://scenes/alien_spaceship.tscn" id="3_m17q1"]
-[ext_resource type="PackedScene" uid="uid://b80n3u6klfktc" path="res://scenes/health_component.tscn" id="4_a2e2y"]
+[ext_resource type="Script" uid="uid://dct76vose0wlp" path="res://scripts/alien_invaders.gd" id="4_m2d54"]
 
 [node name="CombatScene" type="Node2D" unique_id=826582727]
 script = ExtResource("1_ofoda")
@@ -19,58 +18,7 @@ color = Color(0, 0, 0, 1)
 [node name="PlayerSpaceship" parent="." unique_id=853195903 instance=ExtResource("1_ik0t7")]
 position = Vector2(583, 575)
 
-[node name="HealthComponent" parent="PlayerSpaceship" unique_id=218756471 instance=ExtResource("4_a2e2y")]
-life_count = 3
-total_health = 100.0
-
-[node name="AlienSpaceship" parent="." unique_id=1091925366 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(570, 242)
-
-[node name="HealthComponent" parent="AlienSpaceship" unique_id=1337379515 instance=ExtResource("4_a2e2y")]
-life_count = 1
-total_health = 100.0
-
-[node name="AlienSpaceship2" parent="." unique_id=697139209 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(478, 292)
-
-[node name="HealthComponent" parent="AlienSpaceship2" unique_id=1008715705 instance=ExtResource("4_a2e2y")]
-life_count = 1
-total_health = 100.0
-
-[node name="AlienSpaceship3" parent="." unique_id=80203129 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(642, 290)
-
-[node name="HealthComponent" parent="AlienSpaceship3" unique_id=1373074134 instance=ExtResource("4_a2e2y")]
-life_count = 1
-total_health = 100.0
-
-[node name="AlienSpaceship4" parent="." unique_id=1463890854 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(448, 240)
-
-[node name="HealthComponent" parent="AlienSpaceship4" unique_id=1812248517 instance=ExtResource("4_a2e2y")]
-life_count = 1
-total_health = 100.0
-
-[node name="AlienSpaceship5" parent="." unique_id=1694283746 groups=["aliens"] instance=ExtResource("3_m17q1")]
-position = Vector2(692, 242)
-
-[node name="HealthComponent" parent="AlienSpaceship5" unique_id=2011465873 instance=ExtResource("4_a2e2y")]
-life_count = 1
-total_health = 100.0
+[node name="AlienInvaders" type="Node2D" parent="." unique_id=938877247]
+script = ExtResource("4_m2d54")
 
 [connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
-[connection signal="hit" from="AlienSpaceship" to="AlienSpaceship/HealthComponent" method="_on_hit_taken"]
-[connection signal="died" from="AlienSpaceship/HealthComponent" to="AlienSpaceship" method="_on_health_component_died"]
-[connection signal="out_of_lives" from="AlienSpaceship/HealthComponent" to="." method="_on_alien_spaceship_killed"]
-[connection signal="hit" from="AlienSpaceship2" to="AlienSpaceship2/HealthComponent" method="_on_hit_taken"]
-[connection signal="died" from="AlienSpaceship2/HealthComponent" to="AlienSpaceship2" method="_on_health_component_died"]
-[connection signal="out_of_lives" from="AlienSpaceship2/HealthComponent" to="." method="_on_alien_spaceship_killed"]
-[connection signal="hit" from="AlienSpaceship3" to="AlienSpaceship3/HealthComponent" method="_on_hit_taken"]
-[connection signal="died" from="AlienSpaceship3/HealthComponent" to="AlienSpaceship3" method="_on_health_component_died"]
-[connection signal="out_of_lives" from="AlienSpaceship3/HealthComponent" to="." method="_on_alien_spaceship_killed"]
-[connection signal="hit" from="AlienSpaceship4" to="AlienSpaceship4/HealthComponent" method="_on_hit_taken"]
-[connection signal="died" from="AlienSpaceship4/HealthComponent" to="AlienSpaceship4" method="_on_health_component_died"]
-[connection signal="out_of_lives" from="AlienSpaceship4/HealthComponent" to="." method="_on_alien_spaceship_killed"]
-[connection signal="hit" from="AlienSpaceship5" to="AlienSpaceship5/HealthComponent" method="_on_hit_taken"]
-[connection signal="died" from="AlienSpaceship5/HealthComponent" to="AlienSpaceship5" method="_on_health_component_died"]
-[connection signal="out_of_lives" from="AlienSpaceship5/HealthComponent" to="." method="_on_alien_spaceship_killed"]

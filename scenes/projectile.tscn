@@ -9,7 +9,7 @@ size = Vector2(4, 14)
 [node name="Projectile" type="Area2D" unique_id=484469930 groups=["Projectiles"]]
 script = ExtResource("1_c8fcr")
 speed = 500.0
-damage_amount = 25.0
+damage_amount = 100.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=657129451]
 texture = ExtResource("2_q3m7n")

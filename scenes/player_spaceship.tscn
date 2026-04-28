@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://2dve6pum8xx" path="res://assets/Spaceship.png" id="1_l02bw"]
 [ext_resource type="Script" uid="uid://dg0yfcqres3q" path="res://scripts/player_spaceship.gd" id="1_ssrnc"]
+[ext_resource type="PackedScene" uid="uid://b80n3u6klfktc" path="res://scenes/health_component.tscn" id="3_n3bja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l02bw"]
 radius = 17.0
@@ -16,3 +17,7 @@ texture = ExtResource("1_l02bw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=518441146]
 position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_l02bw")
+
+[node name="HealthComponent" parent="." unique_id=218756471 instance=ExtResource("3_n3bja")]
+life_count = 3
+total_health = 100.0
