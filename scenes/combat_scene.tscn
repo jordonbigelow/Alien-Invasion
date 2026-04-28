@@ -20,6 +20,7 @@ color = Color(0, 0, 0, 1)
 position = Vector2(583, 575)
 
 [node name="AlienInvaders" type="Node2D" parent="." unique_id=938877247]
+position = Vector2(180, 30)
 script = ExtResource("4_m2d54")
 
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1199586081]
