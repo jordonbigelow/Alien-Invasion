@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3csvpnsr1a5a" path="res://scenes/player_spaceship.tscn" id="1_ik0t7"]
 [ext_resource type="Script" uid="uid://c00k3fkpwwscg" path="res://scripts/combat_scene.gd" id="1_ofoda"]
+[ext_resource type="PackedScene" uid="uid://bvppw4hafqagb" path="res://scenes/hud.tscn" id="4_a2e2y"]
 [ext_resource type="Script" uid="uid://dct76vose0wlp" path="res://scripts/alien_invaders.gd" id="4_m2d54"]
 
 [node name="CombatScene" type="Node2D" unique_id=826582727]
@@ -20,5 +21,9 @@ position = Vector2(583, 575)
 
 [node name="AlienInvaders" type="Node2D" parent="." unique_id=938877247]
 script = ExtResource("4_m2d54")
+
+[node name="GUI" type="CanvasLayer" parent="." unique_id=1199586081]
+
+[node name="HUD" parent="GUI" unique_id=983877165 instance=ExtResource("4_a2e2y")]
 
 [connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
