@@ -20,6 +20,8 @@ color = Color(0, 0, 0, 1)
 position = Vector2(583, 575)
 
 [node name="HealthComponent" parent="PlayerSpaceship" unique_id=218756471 instance=ExtResource("4_a2e2y")]
+life_count = 3
+total_health = 100.0
 
 [node name="AlienSpaceship" parent="." unique_id=1091925366 groups=["aliens"] instance=ExtResource("3_m17q1")]
 position = Vector2(570, 242)
