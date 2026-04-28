@@ -9,7 +9,7 @@ func _on_player_spaceship_shoot(projectile: Variant, location: Variant) -> void:
 	add_child(projectile_instance)
 	projectile_instance.position = location
 
-func _on_alien_spaceship_died() -> void:
+func _on_alien_spaceship_killed() -> void:
 	total_score += 1
 
 func _process(_delta: float) -> void:

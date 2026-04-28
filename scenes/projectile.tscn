@@ -1,20 +1,15 @@
 [gd_scene format=3 uid="uid://kufwb8kj7rfp"]
 
 [ext_resource type="Script" uid="uid://ctgwch8k8xlqm" path="res://scripts/projectile.gd" id="1_c8fcr"]
+[ext_resource type="Texture2D" uid="uid://bl1400174pl6p" path="res://assets/Missile.png" id="2_q3m7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6aapk"]
 size = Vector2(4, 14)
 
 [node name="Projectile" type="Area2D" unique_id=484469930 groups=["Projectiles"]]
 script = ExtResource("1_c8fcr")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=345726767]
-z_index = -1
-offset_left = -2.0
-offset_top = -7.0
-offset_right = 2.0
-offset_bottom = 7.0
-color = Color(0.14116672, 0.77, 0, 1)
+speed = 500.0
+damage_amount = 25.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1455122824]
 shape = SubResource("RectangleShape2D_6aapk")
@@ -22,5 +17,8 @@ shape = SubResource("RectangleShape2D_6aapk")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=149685645]
 position = Vector2(-3, -7)
 rect = Rect2(1, 0, 4, 14)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657129451]
+texture = ExtResource("2_q3m7n")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
