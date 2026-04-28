@@ -9,27 +9,43 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1593075941]
-custom_minimum_size = Vector2(1152, 0)
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -576.0
-offset_right = 576.0
-offset_bottom = 40.0
+offset_left = -300.0
+offset_top = 20.0
+offset_right = 300.0
+offset_bottom = 43.0
 grow_horizontal = 2
 
 [node name="CurrentScore" type="Label" parent="HBoxContainer" unique_id=2074166513]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Score 1: "
+text = "Score 1: 550"
 
 [node name="HiScore" type="Label" parent="HBoxContainer" unique_id=1002874769]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Hi Score: "
+text = "Hi Score: 9999"
 
 [node name="SecondScore" type="Label" parent="HBoxContainer" unique_id=1529150735]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Score 2: "
+text = "Score 2: 8888"
+
+[node name="LifeCounter" type="HBoxContainer" parent="." unique_id=1880859816]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -61.0
+offset_right = 76.0
+offset_bottom = -21.0
+grow_vertical = 0
+
+[node name="LifeCount" type="Label" parent="LifeCounter" unique_id=1229834894]
+layout_mode = 2
+text = "Life: 3"
