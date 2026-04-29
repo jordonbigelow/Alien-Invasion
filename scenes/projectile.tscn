@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6aapk"]
 size = Vector2(4, 14)
 
-[node name="Projectile" type="Area2D" unique_id=484469930 groups=["Projectiles"]]
+[node name="Projectile" type="Area2D" unique_id=484469930 groups=["projectiles"]]
 script = ExtResource("1_c8fcr")
 speed = 500.0
 damage_amount = 100.0
