@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2dve6pum8xx" path="res://assets/Spaceship.png" id="1_l02bw"]
 [ext_resource type="Script" uid="uid://dg0yfcqres3q" path="res://scripts/player_spaceship.gd" id="1_ssrnc"]
 [ext_resource type="PackedScene" uid="uid://b80n3u6klfktc" path="res://scenes/health_component.tscn" id="3_n3bja"]
+[ext_resource type="PackedScene" uid="uid://bh0tx2e36ju2a" path="res://scenes/life_component.tscn" id="4_4t7rc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l02bw"]
 radius = 17.0
@@ -19,5 +20,9 @@ position = Vector2(0, 2)
 shape = SubResource("CircleShape2D_l02bw")
 
 [node name="HealthComponent" parent="." unique_id=218756471 instance=ExtResource("3_n3bja")]
-life_count = 3
 total_health = 100.0
+
+[node name="LifeComponent" parent="." unique_id=430871226 instance=ExtResource("4_4t7rc")]
+
+[connection signal="died" from="HealthComponent" to="." method="_on_player_died"]
+[connection signal="died" from="HealthComponent" to="LifeComponent" method="_on_player_died"]

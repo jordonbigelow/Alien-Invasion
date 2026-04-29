@@ -15,10 +15,8 @@ texture = ExtResource("1_a3wys")
 polygon = PackedVector2Array(0, -11, -8, -5, -13, 0, -8, 6, 0, 8, 9, 6, 13, 0, 8, -5)
 
 [node name="HealthComponent" parent="." unique_id=218756471 instance=ExtResource("3_2qcaw")]
-life_count = 1
 total_health = 100.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="hit" from="." to="HealthComponent" method="_on_hit_taken"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
-[connection signal="out_of_lives" from="HealthComponent" to="." method="_on_health_component_out_of_lives"]
