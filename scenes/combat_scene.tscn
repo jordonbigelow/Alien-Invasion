@@ -26,3 +26,5 @@ script = ExtResource("4_m2d54")
 [node name="GUI" type="CanvasLayer" parent="." unique_id=1199586081]
 
 [node name="HUD" parent="GUI" unique_id=983877165 instance=ExtResource("4_a2e2y")]
+
+[connection signal="shoot" from="PlayerSpaceship" to="." method="_on_player_spaceship_shoot"]
