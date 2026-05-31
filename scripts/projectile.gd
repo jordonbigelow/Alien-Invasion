@@ -4,6 +4,9 @@ extends Area2D
 @export var damage_amount: float
 var velocity = Vector2.UP * speed
 
+func _ready() -> void:
+	add_to_group("projectiles")
+
 func _physics_process(delta: float) -> void:
 	position += velocity * delta
 
