@@ -23,6 +23,8 @@ position = Vector2(583, 575)
 [node name="AlienInvaders" type="Node2D" parent="." unique_id=938877247]
 position = Vector2(180, 30)
 script = ExtResource("4_m2d54")
+h_step_increase_on_death = 1.015
+vertical_step_down_amount = 25
 
 [node name="AlienSoundFX" type="AudioStreamPlayer" parent="AlienInvaders" unique_id=1276111815]
 stream = ExtResource("4_ikfks")

@@ -13,6 +13,8 @@ var bounds: Rect2 = Rect2()
 
 @export var rows = 5
 @export var cols = 11
+@export var h_step_increase_on_death: float
+@export var vertical_step_down_amount: int
 
 const ALIEN_SCENE: PackedScene = preload("res://scenes/alien_spaceship.tscn")
 # 15 px from edge of viewport
@@ -69,10 +71,10 @@ func _step() -> void:
 	
 	
 func _step_down() -> void:
-	position.y += 25
+	position.y += vertical_step_down_amount
 
 
 func _on_alien_spaceship_killed(points_for_kill: int) -> void:
 	alien_sound_fx.play(1.25)
 	total_score += points_for_kill
-	h_step_amount *= 1.015
+	h_step_amount *= h_step_increase_on_death
