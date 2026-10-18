@@ -6,7 +6,7 @@ var v_spacing: float = 45.0
 var direction: int = 1
 var h_step_amount: float = 1.0
 var alien_count: int = 0
-var alien_half_width: float = 16.0  # tweak to match your sprite
+var alien_half_width: float = 16.0
 var bounds: Rect2 = Rect2()
 
 @onready var alien_sound_fx := $AlienSoundFX
@@ -15,7 +15,7 @@ var bounds: Rect2 = Rect2()
 @export var cols = 11
 
 const ALIEN_SCENE: PackedScene = preload("res://scenes/alien_spaceship.tscn")
-# 10 px from edge of viewport
+# 15 px from edge of viewport
 const EDGE_BUFFER: float = 15.0
 
 func _ready() -> void:
@@ -75,3 +75,4 @@ func _step_down() -> void:
 func _on_alien_spaceship_killed(points_for_kill: int) -> void:
 	alien_sound_fx.play(1.25)
 	total_score += points_for_kill
+	h_step_amount *= 1.015
