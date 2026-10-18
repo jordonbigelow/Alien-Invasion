@@ -9,6 +9,7 @@ func _process(_delta: float) -> void:
 	if remaining_aliens <= 0:
 		#print("total score: " + str(total_score))
 		print("total projectiles fired: "+ str(projectiles_fired))
+		print("congrats, you've won!")
 		get_tree().paused = true
 
 func _on_player_spaceship_shoot(projectile: Variant, location: Variant) -> void:
