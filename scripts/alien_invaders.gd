@@ -5,8 +5,6 @@ var h_spacing: float = 45.0
 var v_spacing: float = 45.0
 var direction: int = 1
 var h_step_amount: float = 1.0
-var left_limit: float = 30.0
-var right_limit: float = 670.0
 var alien_count: int = 0
 var alien_half_width: float = 16.0  # tweak to match your sprite
 var bounds: Rect2 = Rect2()
@@ -18,7 +16,7 @@ var bounds: Rect2 = Rect2()
 
 const ALIEN_SCENE: PackedScene = preload("res://scenes/alien_spaceship.tscn")
 # 10 px from edge of viewport
-const EDGE_BUFFER: float = 10.0
+const EDGE_BUFFER: float = 15.0
 
 func _ready() -> void:
 	for row in range(rows):
