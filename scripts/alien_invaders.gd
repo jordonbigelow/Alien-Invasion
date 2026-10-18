@@ -9,7 +9,6 @@ var h_step_amount: float = 1.0
 var left_limit: float = 30.0
 var right_limit: float = 670.0
 var alien_count = 0
-var alien_points = 1
 
 @onready var alien_sound_fx := $AlienSoundFX
 
@@ -27,15 +26,13 @@ func _ready() -> void:
 				alien.position = Vector2(col * h_spacing, row * v_spacing)
 				alien.connect("hit", _on_alien_spaceship_killed)
 				add_child(alien)
-				alien.add_to_group("alien_invaders")
 
 func _process(_delta: float) -> void:
 	_step()
 
 func _on_alien_spaceship_killed(points_for_kill: int) -> void:
-	total_score += points_for_kill
 	alien_sound_fx.play(1.25)
-	print(len(get_tree().get_nodes_in_group("alien_invaders")))
+	total_score += points_for_kill
 
 func _step() -> void:
 	position.x = clampf(position.x, left_limit, right_limit)
