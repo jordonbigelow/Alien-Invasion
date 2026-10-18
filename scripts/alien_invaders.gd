@@ -11,6 +11,8 @@ var right_limit: float = 670.0
 var alien_count = 0
 var alien_points = 1
 
+@onready var alien_sound_fx := $AlienSoundFX
+
 @export var rows = 5
 @export var cols = 11
 
@@ -23,7 +25,7 @@ func _ready() -> void:
 				alien_count += 1
 				alien.name = "Alien_Spaceship_" + str(alien_count)
 				alien.position = Vector2(col * h_spacing, row * v_spacing)
-				alien.connect("is_killed", _on_alien_spaceship_killed)
+				alien.connect("hit", _on_alien_spaceship_killed)
 				add_child(alien)
 				alien.add_to_group("alien_invaders")
 
@@ -32,6 +34,7 @@ func _process(_delta: float) -> void:
 
 func _on_alien_spaceship_killed(points_for_kill: int) -> void:
 	total_score += points_for_kill
+	alien_sound_fx.play(1.25)
 	print(len(get_tree().get_nodes_in_group("alien_invaders")))
 
 func _step() -> void:
