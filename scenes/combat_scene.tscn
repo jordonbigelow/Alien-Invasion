@@ -19,7 +19,7 @@ color = Color(0, 0, 0, 1)
 [node name="PlayerSpaceship" parent="." unique_id=853195903 instance=ExtResource("1_ik0t7")]
 position = Vector2(583, 575)
 
-[node name="AlienInvaders" type="Node2D" parent="." unique_id=938877247]
+[node name="AlienInvaders" type="Node2D" parent="." unique_id=938877247 groups=["alien_invaders"]]
 position = Vector2(180, 30)
 script = ExtResource("4_m2d54")
 

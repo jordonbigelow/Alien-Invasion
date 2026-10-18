@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dg0yfcqres3q" path="res://scripts/player_spaceship.gd" id="1_ssrnc"]
 [ext_resource type="PackedScene" uid="uid://b80n3u6klfktc" path="res://scenes/health_component.tscn" id="3_n3bja"]
 [ext_resource type="PackedScene" uid="uid://bh0tx2e36ju2a" path="res://scenes/life_component.tscn" id="4_4t7rc"]
+[ext_resource type="AudioStream" uid="uid://cp0lcglg7k2lx" path="res://assets/soundfx/player_shooting.wav" id="5_4t7rc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l02bw"]
 radius = 17.0
@@ -23,6 +24,9 @@ shape = SubResource("CircleShape2D_l02bw")
 total_health = 100.0
 
 [node name="LifeComponent" parent="." unique_id=430871226 instance=ExtResource("4_4t7rc")]
+
+[node name="SoundFX" type="AudioStreamPlayer" parent="." unique_id=391878223]
+stream = ExtResource("5_4t7rc")
 
 [connection signal="died" from="HealthComponent" to="." method="_on_player_died"]
 [connection signal="died" from="HealthComponent" to="LifeComponent" method="_on_player_died"]

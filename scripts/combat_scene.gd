@@ -3,6 +3,7 @@ extends Node2D
 var remaining_aliens: int
 var projectiles_fired: int
 
+
 func _process(_delta: float) -> void:
 	remaining_aliens = get_tree().get_nodes_in_group("alien_invaders").size()
 	if remaining_aliens <= 0:
